@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dqossrcrsb5ui"]
+
+[ext_resource type="Script" uid="uid://clgsae1foemw5" path="res://entity/scene/ui/focused/entity_scene_ui_focused.gd" id="1_u3le3"]
+
+[node name="EntitySceneUIFocused" type="Control" unique_id=411629826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3le3")
+
+[node name="MarginBackground" type="MarginContainer" parent="." unique_id=102473041]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelFocusedEntity" type="PanelContainer" parent="MarginBackground" unique_id=1012012520]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="MarginFocusedEntity" type="MarginContainer" parent="MarginBackground/PanelFocusedEntity" unique_id=1303306117]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxFocusedEntity" type="VBoxContainer" parent="MarginBackground/PanelFocusedEntity/MarginFocusedEntity" unique_id=1728091720]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelFocusedEntityName" type="Label" parent="MarginBackground/PanelFocusedEntity/MarginFocusedEntity/VBoxFocusedEntity" unique_id=334962755]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxFocusedEntityHealth" type="HBoxContainer" parent="MarginBackground/PanelFocusedEntity/MarginFocusedEntity/VBoxFocusedEntity" unique_id=1776105380]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelFocusedEntityHealthCurrent" type="Label" parent="MarginBackground/PanelFocusedEntity/MarginFocusedEntity/VBoxFocusedEntity/VBoxFocusedEntityHealth" unique_id=1395534043]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BarFocusedEntityHealth" type="ProgressBar" parent="MarginBackground/PanelFocusedEntity/MarginFocusedEntity/VBoxFocusedEntity/VBoxFocusedEntityHealth" unique_id=1560332769]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+step = 1.0
+
+[node name="LabelFocusedEntityHealthMax" type="Label" parent="MarginBackground/PanelFocusedEntity/MarginFocusedEntity/VBoxFocusedEntity/VBoxFocusedEntityHealth" unique_id=631661655]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

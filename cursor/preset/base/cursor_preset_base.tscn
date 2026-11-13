@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bad2ostgxbby4"]
+
+[ext_resource type="Script" uid="uid://dt08l87esogg3" path="res://cursor/preset/base/cursor_preset_base.gd" id="1_yt4i3"]
+[ext_resource type="PackedScene" uid="uid://daq1p7p17clki" path="res://cursor/detection/entity_detector/cursor_entity_detector.tscn" id="2_m1njc"]
+
+[node name="CursorPresetBase" type="Node3D" unique_id=1170534537]
+script = ExtResource("1_yt4i3")
+
+[node name="SpritesContainer" type="Node3D" parent="." unique_id=795057372]
+unique_name_in_owner = true
+
+[node name="DetectorsContainer" type="Node3D" parent="." unique_id=1396921695]
+unique_name_in_owner = true
+
+[node name="EntityDetector" parent="DetectorsContainer" unique_id=1488657974 instance=ExtResource("2_m1njc")]
+unique_name_in_owner = true

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bq516ce432fwv"]
+
+[ext_resource type="PackedScene" uid="uid://bad2ostgxbby4" path="res://cursor/preset/base/cursor_preset_base.tscn" id="1_h08g6"]
+[ext_resource type="Script" uid="uid://cw3elgxy50fla" path="res://cursor/preset/base/cursor_preset_base_data.gd" id="2_nqkui"]
+[ext_resource type="Texture2D" uid="uid://d2ga8kjthhyre" path="res://assets/icons/icon.svg" id="3_ij64h"]
+[ext_resource type="PackedScene" uid="uid://krayljxrp31o" path="res://cursor/detection/hit_box_detector/cursor_hit_box_detector.tscn" id="4_pimnk"]
+
+[sub_resource type="Resource" id="Resource_h08g6"]
+resource_local_to_scene = true
+script = ExtResource("2_nqkui")
+target_mode = 1
+metadata/_custom_type_script = "uid://cw3elgxy50fla"
+
+[node name="CursorPresetBase" unique_id=1170534537 instance=ExtResource("1_h08g6")]
+data = SubResource("Resource_h08g6")
+
+[node name="Sprite3D" type="Sprite3D" parent="SpritesContainer" parent_id_path=PackedInt32Array(795057372) index="0" unique_id=81558337]
+transform = Transform3D(0.7, 0, 0, 0, 0.19999999, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("3_ij64h")
+
+[node name="EntityDetector" parent="DetectorsContainer" parent_id_path=PackedInt32Array(1396921695) index="0" unique_id=1488657974]
+radius = 0.5
+
+[node name="CursorDetectionHitBoxes" parent="DetectorsContainer" parent_id_path=PackedInt32Array(1396921695) index="1" unique_id=2042957123 instance=ExtResource("4_pimnk")]
+
+[node name="CollisionObject" parent="DetectorsContainer/CursorDetectionHitBoxes" index="0" unique_id=1506926882]
+polygon = PackedVector2Array(-0.41399562, 0.1041378, 0.4165511, 0.09136016, 0.4165511, -0.11563766, -0.40377343, -0.107971)
+
+[editable path="DetectorsContainer/CursorDetectionHitBoxes"]

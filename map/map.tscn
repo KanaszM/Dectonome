@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://moj5cxx0v11y"]
+
+[ext_resource type="Script" uid="uid://4hi6qf2861de" path="res://map/map.gd" id="1_hgrid"]
+
+[node name="Map" type="Node" unique_id=1021161821]
+script = ExtResource("1_hgrid")

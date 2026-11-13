@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bf4v7u534la7k"]
+
+[ext_resource type="Script" uid="uid://ddpdtdclcig1p" path="res://entity/hit_box/entity_hit_box.gd" id="1_a60bk"]
+[ext_resource type="PackedScene" uid="uid://326tew0e2bg3" path="res://entity/hit_box/detection/entity_hit_box_detector.tscn" id="2_oliuw"]
+
+[node name="EntityHitBox" type="Node3D" unique_id=1914851019]
+script = ExtResource("1_a60bk")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="." unique_id=1824968099]
+unique_name_in_owner = true
+
+[node name="Label" type="Label3D" parent="MeshInstance" unique_id=2114246985]
+unique_name_in_owner = true
+double_sided = false
+outline_modulate = Color(0, 0, 0, 0.24705882)
+text = "99"
+
+[node name="Detector" parent="." unique_id=484951241 instance=ExtResource("2_oliuw")]
+unique_name_in_owner = true

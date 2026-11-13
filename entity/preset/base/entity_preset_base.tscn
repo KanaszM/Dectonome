@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d11utbmmghjc7"]
+
+[ext_resource type="TileSet" uid="uid://crbw6q24gyfap" path="res://resources/tile_sets/tile_set_hit_boxes.tres" id="2_qwq0t"]
+
+[node name="EntityPresetBase" type="Node" unique_id=292204941]
+
+[node name="SpritesContainer" type="Node2D" parent="." unique_id=109171565]
+unique_name_in_owner = true
+
+[node name="HitBoxesLayer" type="TileMapLayer" parent="." unique_id=2080132471]
+unique_name_in_owner = true
+tile_set = ExtResource("2_qwq0t")
+navigation_enabled = false
+
+[node name="CursorDetection" type="CollisionShape2D" parent="." unique_id=179807082]
+unique_name_in_owner = true

@@ -1,0 +1,30 @@
+[gd_scene format=4 uid="uid://cdqv8xt6n1cwr"]
+
+[ext_resource type="PackedScene" uid="uid://d11utbmmghjc7" path="res://entity/preset/base/entity_preset_base.tscn" id="1_bintd"]
+[ext_resource type="Script" uid="uid://ligdjtwpvw4p" path="res://entity/preset/base/entity_preset_base.gd" id="2_nxfqa"]
+[ext_resource type="Script" uid="uid://du0s4b662b2uu" path="res://entity/preset/base/entity_preset_base_data.gd" id="3_cvvon"]
+[ext_resource type="Texture2D" uid="uid://bqq0knivm6atc" path="res://assets/misc/misc_grid_128x256x_1.png" id="4_f5llt"]
+
+[sub_resource type="Resource" id="Resource_85dk6"]
+script = ExtResource("3_cvvon")
+id_name = "Test2"
+hit_boxes_subdivision_count_ratio = 0.5
+hit_boxes_subdivision_size_bounds = Vector2i(1, 2)
+hit_boxes_values_bounds = Vector2i(2, 4)
+metadata/_custom_type_script = "uid://du0s4b662b2uu"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gajrn"]
+radius = 104.120125
+
+[node name="EntityPresetTest2" unique_id=292204941 instance=ExtResource("1_bintd")]
+script = ExtResource("2_nxfqa")
+data = SubResource("Resource_85dk6")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpritesContainer" parent_id_path=PackedInt32Array(109171565) index="0" unique_id=1201049494]
+texture = ExtResource("4_f5llt")
+
+[node name="HitBoxesLayer" parent="." index="1" unique_id=2080132471]
+tile_map_data = PackedByteArray("AAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///7/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAD9/wMAAAAAAAAAAAACAAMAAAAAAAAAAAA=")
+
+[node name="CursorDetection" parent="." index="2" unique_id=179807082]
+shape = SubResource("CircleShape2D_gajrn")

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfbwmnnu7yu3k"]
+
+[ext_resource type="Texture2D" uid="uid://boviwfvj8itmu" path="res://assets/misc/misc_grid_32x_1.png" id="1_f0ald"]
+
+[resource]
+render_priority = 101
+transparency = 1
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("1_f0ald")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 4.0
+emission_texture = ExtResource("1_f0ald")
+texture_filter = 0

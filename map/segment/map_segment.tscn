@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cpthtnltps7hi"]
+
+[ext_resource type="Script" uid="uid://cokmhk2ix11cp" path="res://map/segment/map_segment.gd" id="1_qfwlk"]
+
+[node name="MapSegment" type="Node3D" unique_id=936124282]
+script = ExtResource("1_qfwlk")

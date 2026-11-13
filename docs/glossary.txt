@@ -1,0 +1,8 @@
+Encounter: A combat event between one Player party and one Hostile party
+Party: A formation of 1 to 6 Units, arranged into a Front Row (up to 3) and a Back Row (up to 3)
+	Player: The Party controlled by the user, composed entirely of Allies
+	Hostile: The opposing Party, composed entirely of Enemies
+Unit: An individual combatant or entity within a Party
+	Ally: A Unit belonging to the Player party
+	Enemy: A Unit belonging to the Hostile party
+Target: Any Unit belonging to the opposing Party relative to the acting Unit

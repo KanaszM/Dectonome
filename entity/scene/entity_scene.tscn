@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://4by74shslpib"]
+
+[ext_resource type="Script" uid="uid://5ugyc2gaxmgs" path="res://entity/scene/entity_scene.gd" id="1_gdytr"]
+[ext_resource type="PackedScene" uid="uid://dqossrcrsb5ui" path="res://entity/scene/ui/focused/entity_scene_ui_focused.tscn" id="2_4fdyr"]
+
+[node name="EntityScene" type="Node3D" unique_id=1991828105]
+script = ExtResource("1_gdytr")
+
+[node name="UIContainer" type="CanvasLayer" parent="." unique_id=2007335540]
+
+[node name="UIFocused" parent="UIContainer" unique_id=411629826 instance=ExtResource("2_4fdyr")]
+unique_name_in_owner = true
+
+[node name="CursorContainer" type="Node3D" parent="." unique_id=1795909465]
+unique_name_in_owner = true
+
+[node name="EntityContainerRows" type="Node3D" parent="." unique_id=255439900]
+unique_name_in_owner = true
+
+[node name="EntityContainerRowFront" type="Node3D" parent="EntityContainerRows" unique_id=652160429]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="EntityContainerFrontLeft" type="Marker3D" parent="EntityContainerRows/EntityContainerRowFront" unique_id=1515778793]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[node name="EntityContainerFrontMiddle" type="Marker3D" parent="EntityContainerRows/EntityContainerRowFront" unique_id=399265106]
+unique_name_in_owner = true
+
+[node name="EntityContainerFrontRight" type="Marker3D" parent="EntityContainerRows/EntityContainerRowFront" unique_id=1323632597]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="EntityContainerRowBack" type="Node3D" parent="EntityContainerRows" unique_id=604763972]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+
+[node name="EntityContainerBackLeft" type="Marker3D" parent="EntityContainerRows/EntityContainerRowBack" unique_id=1112418951]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[node name="EntityContainerBackMiddle" type="Marker3D" parent="EntityContainerRows/EntityContainerRowBack" unique_id=763122995]
+unique_name_in_owner = true
+
+[node name="EntityContainerBackRight" type="Marker3D" parent="EntityContainerRows/EntityContainerRowBack" unique_id=1602484085]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
