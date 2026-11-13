@@ -1,0 +1,6 @@
+[submodule "modules/ShaperTech"]
+	path = modules/ShaperTech
+	url = https://github.com/KanaszM/ShaperTech
+[submodule "modules/FPSController"]
+	path = modules/FPSController
+	url = https://github.com/KanaszM/FPSController
