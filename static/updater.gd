@@ -1,6 +1,7 @@
 class_name Updater
 
 #region Constants
+const DEFAULT_UPDATE_STEP_PREFIX: String = "_update_step_"
 const DEFAULT_ERROR_MESSAGE: String = "Update failed!"
 #endregion
 
@@ -58,7 +59,7 @@ func abort(error_message: String = DEFAULT_ERROR_MESSAGE) -> void:
 	updated.emit(false)
 
 
-func proceed() -> void:
+func proceed(message: String = "") -> void:
 	_update_idx += 1
 	
 	if _update_idx == _update_steps_size:
@@ -75,7 +76,12 @@ func proceed() -> void:
 	var update_step: Callable = _update_steps[_update_idx]
 	
 	if _print_info_enabled:
-		print("\t%s :: %d / %d" % [update_step.get_method(), _update_idx + 1, _update_steps_size])
+		print("\t%s%s :: %d / %d" % [
+			update_step.get_method().trim_prefix(DEFAULT_UPDATE_STEP_PREFIX).capitalize(),
+			("" if message.is_empty() else (" > %s" % message)),
+			_update_idx + 1,
+			_update_steps_size
+			])
 	
 	update_step.call()
 
@@ -93,6 +99,10 @@ func enable_process(state: bool) -> void:
 	_origin.set_physics_process(state)
 	_origin.set_process_input(state)
 	_origin.set_process_unhandled_input(state)
+
+
+func is_updating() -> bool:
+	return _is_updating
 #endregion
 
 #region Private Methods

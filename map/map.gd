@@ -1,35 +1,15 @@
-extends Node
-
-#region Enums
-enum Level {
-	NIHIL = -5,
-	VOID = -4,
-	ABYSS = -3,
-	DUNGEON = -2,
-	UNDERGROUND = -1,
-	GROUND = 0,
-	SETTLEMENT = 1,
-	HILLS = 2,
-	MOUNTAINS = 3,
-	SKY = 4,
-	SPACE = 5,
-	}
-
-enum NihilType {UNMAKING, STATIC, NON_EUCLIDEAN, BLIND_DREAM, FORGOTTEN}
-enum VoidType {NULL_EXPANSE, DRIFTING_SHARDS, SILENT_GULF, STARLESS_SEA, ASTRAL_RIFT}
-enum AbyssType {CHASM, SUNKEN_TRENCH, SHADOW_MIRE, SULFUR_VENT, OBSIDIAN_MAW}
-enum DungeonType {CRYPT, LABYRINTH, CATACOMBS, FORGOTTEN_VAULT, TORTURE_CHAMBER}
-enum UndergroundType {CAVERNS, CRYSTAL_GROTTO, FUNGAL_FOREST, SUBTERRANEAN_RIVER, ABANDONED_MINE}
-enum GroundType {PLAINS, FOREST, GRASSLAND, SWAMP, DESERT}
-enum SettlementType {VILLAGE, TOWN, CITY, FORTRESS, OUTPOST}
-enum HillsType {ROLLING_HILLS, HIGHLANDS, BADLANDS, SCRUBLAND, TERRACED_SLOPES}
-enum MountainsType {PEAKS, ALPINE_TUNDRA, GLACIER, VOLCANIC_CRAG, CLIFFSIDE}
-enum SkyType {CLOUD_SEA, FLOATING_ISLANDS, STORM_FRONT, STRATOSPHERE, AURORA_DRIFT}
-enum SpaceType {ORBIT, ASTEROID_BELT, NEBULA, DEEP_COSMOS, SOLAR_CORONA}
-#endregions
+extends Node3D
 
 #region Signals
 signal removed
+#endregion
+
+#region Public References
+@onready var world_environment := %WorldEnvironment as WorldEnvironment
+@onready var environment: Environment = world_environment.environment
+
+@onready var player_container := %PlayerContainer as Node3D
+@onready var segments_container := %SegmentsContainer as Node3D
 #endregion
 
 #region Public Methods

@@ -153,6 +153,26 @@ static func get_clamped_render_priority(value: int) -> int:
 	return clampi(
 		value, MainConstants.RENDER_PRIORITY_BOUNDS.x, MainConstants.RENDER_PRIORITY_BOUNDS.y
 		)
+
+
+static func enum_to_typed_dict(enum_arg: Dictionary) -> Dictionary[String, int]:
+	return Dictionary(
+		enum_arg, TYPE_STRING, &"", null, TYPE_INT, &"", null
+		) as Dictionary[String, int]
+
+
+static func enum_to_str(
+	enum_arg: Dictionary, idx: int, to_lower: bool = false, replace_spaces: bool = true
+	) -> String:
+		var result: String
+		var enum_dict: Dictionary[String, int] = enum_to_typed_dict(enum_arg)
+		
+		for key: String in enum_dict:
+			if enum_dict[key] == idx:
+				result = str(key).replace("_", " ") if replace_spaces else str(key)
+				break
+		
+		return result.to_lower() if to_lower else result
 #endregion
 
 #region Private SubClasses

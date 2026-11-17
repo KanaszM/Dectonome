@@ -1,6 +1,55 @@
 [gd_scene format=3 uid="uid://cpthtnltps7hi"]
 
 [ext_resource type="Script" uid="uid://cokmhk2ix11cp" path="res://map/segment/map_segment.gd" id="1_qfwlk"]
+[ext_resource type="Script" uid="uid://d130jmnwxtp6t" path="res://modules/ShaperTech/st_container.gd" id="2_0nsj4"]
+[ext_resource type="Script" uid="uid://n0afxsq8nmgb" path="res://modules/ShaperTech/wall/st_wall.gd" id="3_umuqd"]
+[ext_resource type="Script" uid="uid://cvkedpsyp3ryc" path="res://modules/ShaperTech/wall/st_wall_data.gd" id="4_uu8u4"]
+[ext_resource type="Script" uid="uid://c0irn1576ymdb" path="res://modules/ShaperTech/wall/st_wall_materials.gd" id="5_m8iqo"]
 
-[node name="MapSegment" type="Node3D" unique_id=936124282]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfwlk"]
+bg_color = Color(0.1897483, 0.34064347, 0.8823829, 0.25)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_5u31p"]
+script = ExtResource("4_uu8u4")
+geometry_distance = -100.0
+geometry_height = 200.0
+collision_enabled = true
+collision_enabled_in_editor = true
+
+[sub_resource type="Resource" id="Resource_tw7pe"]
+script = ExtResource("5_m8iqo")
+front_type = 1
+back_type = 1
+
+[node name="MapSegment" type="Node" unique_id=1135585066]
 script = ExtResource("1_qfwlk")
+metadata/_custom_type_script = "uid://d130jmnwxtp6t"
+
+[node name="SizeIndicator" type="Panel" parent="." unique_id=1444343614]
+unique_name_in_owner = true
+offset_left = -128.0
+offset_top = -384.0
+offset_right = 128.0
+offset_bottom = 384.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfwlk")
+
+[node name="MarkerMiddle" type="Marker3D" parent="." unique_id=179294003]
+unique_name_in_owner = true
+
+[node name="Boundaries" type="Node" parent="." unique_id=2087898616]
+script = ExtResource("2_0nsj4")
+metadata/_custom_type_script = "uid://d130jmnwxtp6t"
+
+[node name="Left" type="Line2D" parent="Boundaries" unique_id=1255945201]
+points = PackedVector2Array(-128, -384, -128, 384)
+script = ExtResource("3_umuqd")
+data = SubResource("Resource_5u31p")
+materials = SubResource("Resource_tw7pe")
+build_on_ready = 2
+build_nodes_in_editor = true
+metadata/_custom_type_script = "uid://n0afxsq8nmgb"

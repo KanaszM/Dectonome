@@ -2,5 +2,26 @@
 
 [ext_resource type="Script" uid="uid://4hi6qf2861de" path="res://map/map.gd" id="1_hgrid"]
 
-[node name="Map" type="Node" unique_id=1021161821]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hgrid"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_umuqd"]
+sky_material = SubResource("ProceduralSkyMaterial_hgrid")
+
+[sub_resource type="Environment" id="Environment_a0dt8"]
+background_mode = 2
+sky = SubResource("Sky_umuqd")
+
+[node name="Map" type="Node3D" unique_id=1966672944]
 script = ExtResource("1_hgrid")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=150986432]
+unique_name_in_owner = true
+environment = SubResource("Environment_a0dt8")
+
+[node name="PlayerContainer" type="Node3D" parent="." unique_id=1321958180]
+unique_name_in_owner = true
+
+[node name="SegmentsContainer" type="Node3D" parent="." unique_id=1002493074]
+unique_name_in_owner = true
